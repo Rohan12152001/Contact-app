@@ -1,0 +1,12 @@
+{% extends "contactapp/base.html" %}
+    {% block content %}
+
+    <h1>Welcome to home page !</h1>
+    <br>
+    {% if user.is_authenticated %}
+    <h2>Yayy you are logged in !</h2>
+    <h2>Check out your contacts using the navbar options :D </h2>
+    {% else %}
+    <h2>Please Login first !</h2>
+    {% endif %}
+    {% endblock %}

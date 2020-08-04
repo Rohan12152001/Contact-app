@@ -1,0 +1,31 @@
+{% extends "contactapp/base.html" %}
+    {% block content %}
+
+    <h1>Welcome to Contact App <span class="material-icons">sentiment_very_satisfied</span></h1> <br> <!--<h1>We are happy to have you here :] </h1>-->
+    <br>
+    <div class="center" style="border:2px solid black;padding: 10px 10px;">
+    {% if user.is_authenticated %}
+    <h2>Here's the list of your Contacts: </h2>
+    <div>
+        {% for person in persons %}
+            <ul>
+                <li><a href="{{person.id}}" style="color: blue;font-size: 2em;">{{ person.full_name }}</a></li>
+            </ul>
+        {% endfor %}
+        <br>
+        <p style="padding-left: 20px;"><a class="btn btn-primary" href={% url 'contactapp:create' %} role="button"><span class="material-icons">
+            person_add
+            </span></a></p>
+    </div>
+    {% else %}
+    <div class="conatainer" style="margin: auto;text-align: center;display: inline-block;">
+        <h4>No contacts to show :) </h4>
+        <h4>But we got you covered ! You can create them too.. </h4>
+        <h4> Please check if you are logged in :) </h4>
+    </div>
+    {% endif %}
+    
+    </div>
+    
+
+    {% endblock %}

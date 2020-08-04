@@ -1,0 +1,36 @@
+{% extends "contactapp/base.html" %}
+    {% block content %}
+
+    <div class="conatiner" style="padding-top: 90px;">
+        <div class="jumbotron">
+            <h2>Contact details:</h2><br>
+            <h5>First Name: {{ contactdetails.first_name }} </h5>
+            <h5>Last Name: {{ contactdetails.last_name }}</h5>
+            <h5>Email: {{ contactdetails.email }}</h5>
+            <h5>Phone Number: {{ contactdetails.phonenumber }}</h5><br>
+            
+            <!-- {% if contactdetails.profile_pic %}
+              
+              <img src="{{ contactdetails.profile_pic.url }}" style="width: 700px;padding-bottom: 10px;border-radius: 50%;" />
+            {% endif %} -->
+              
+            
+            
+              
+            
+            <!-- <p style="padding-left: 20px;"><a class="btn btn-primary" href={% url 'contactapp:update' pk=contactdetails.pk %} role="button">Update</a></p>
+            <p style="padding-left: 40px;"><a class="btn btn-primary" href={% url 'contactapp:delete' pk=contactdetails.pk %} role="button">Delete</a></p> -->
+            
+            <div class="btn-toolbar" role="toolbar" aria-label="Toolbar with button groups">
+                <div class="btn-group mr-2" role="group" aria-label="First group">
+                  <button type="button" class="btn btn-secondary"><a href={% url 'contactapp:update' pk=contactdetails.pk %} style="color: azure;">Update</a></button>
+                </div>
+                <div class="btn-group mr-2" role="group" aria-label="Second group">
+                  <button type="button" class="btn btn-secondary"><a href={% url 'contactapp:delete' pk=contactdetails.pk %} style="color: azure;">Delete</a></button>
+                </div>
+              </div>
+        </div>
+    </div>
+    
+    
+    {% endblock %}

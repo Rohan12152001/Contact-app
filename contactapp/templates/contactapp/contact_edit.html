@@ -1,0 +1,14 @@
+{% extends "contactapp/base.html" %}
+{% load bootstrap4 %}
+{% block content %}
+<div class="container">
+    <form method="post" class="form1" enctype="multipart/form-data">
+        {% csrf_token %}
+        <!-- <div class="form1">
+        {{ form.as_p }}
+        </div> -->
+        {% bootstrap_form form %}
+        <input class="btn btn-primary" type="submit" value="Save" />
+    </form>
+</div>
+{% endblock %}
